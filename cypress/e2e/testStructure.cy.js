@@ -23,5 +23,17 @@ it('Opening a web application',()=>{
     
     cy.get('.nav-link').click();
 })
+it('Test2',()=>{
+expect(false).not.to.equal(true);
+})
+it('Test3',()=>{
+    expect(false).not.to.equal(false);
+    })
 
+it('Test4',()=>{
+    expect(5).to.equal(5);
+    })
+    it('Test5',()=>{
+        expect(true).not.to.equal('5'==5);
+        })
 })
