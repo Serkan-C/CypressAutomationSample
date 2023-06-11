@@ -2,16 +2,16 @@
 
 describe("Find or get Elemenets by Using different Locators", () => {
   before(() => {
-    //runs once before all test cases in this describe block, like beforeclass in TestNG
+    // runs once before all test cases in this describe block, like beforeclass in TestNG
   });
   beforeEach(() => {
-    //run before each test case, beforeMethod in TestNG
+    // run before each test case, beforeMethod in TestNG
     cy.clearCookies();
     cy.visit("/login");
   });
 
   xit("Check different locators strategies", () => {
-    //By CSS Locator
+    // By CSS Locator
     cy.get("input[name='username']").type("CydeoStudent"); // every statement creates an object to be interacted,
     //  and next command makes operation to the object created at previous statement
     cy.get("[type='text']").clear(); // clear what is typed
@@ -20,13 +20,13 @@ describe("Find or get Elemenets by Using different Locators", () => {
       expect(list).to.have.length(2);
       expect(item).to.have.attr("type");
     });
-    //by attribute name
+    // by attribute name
     cy.get("[type]");
 
     // by className
     cy.get(".btn.btn-primary");
 
-    //By id
+    // By id
     cy.get("#wooden_spoon");
 
     // if I want to use text: no xpath in cypress, but it still possible with a different approach
@@ -34,7 +34,7 @@ describe("Find or get Elemenets by Using different Locators", () => {
   });
 
   xit("Check finding elements by travelling through DOM", () => {
-    //travel to find  login button:locate username box- go to parent form -then find button
+    // travel to find  login button:locate username box- go to parent form -then find button
     cy
       .get('input[name="username"]')
       .parents("form")

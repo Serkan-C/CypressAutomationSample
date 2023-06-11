@@ -1,43 +1,38 @@
 /// <reference types="cypress" />
 
-describe('Context: my First tests',()=>{
- before(()=>{
-//runs once before all test cases in this describe block, like beforeclass in TestNG
+describe("Context: my First tests", () => {
+  before(() => {
+    // runs once before all test cases in this describe block, like beforeclass in TestNG
+  });
+  beforeEach(() => {
+    // run before each test case, beforeMethod in TestNG
+  });
+  afterEach(() => {
+    // run after each test case, afterMethod in TestNG
+  });
+  after(() => {
+    // runs once after all test cases finished in this describe block, like afterClass in TestNG
+  });
 
- })
-beforeEach(()=>{
-//run before each test case, beforeMethod in TestNG
+  it("Opening a web application", () => {
+    cy.visit("/registration_form");
 
-})
-afterEach(()=>{
-    //run after each test case, afterMethod in TestNG
-    
-    })
-after(()=>{
-    //runs once after all test cases finished in this describe block, like afterClass in TestNG
-    
-     })
+    cy.get(".nav-link").click();
+  });
 
-it('Opening a web application',()=>{
-    cy.visit('/registration_form');
-    
-    cy.get('.nav-link').click();
-})
-
-xit('Test2',()=>{
-expect(false).not.to.equal(true);
-})
-
-it('Test3',()=>{
+  xit("Test2", () => {
     expect(false).not.to.equal(true);
-    })
+  });
 
+  it("Test3", () => {
+    expect(false).not.to.equal(true);
+  });
 
-it('Test4',()=>{
+  it("Test4", () => {
     expect(5).to.equal(5);
-    })
+  });
 
-it('Test5',()=>{
-        expect(true).to.equal('5'==5);
-        })
-})
+  it("Test5", () => {
+    expect(true).to.equal("5" == 5);
+  });
+});
