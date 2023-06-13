@@ -6,8 +6,7 @@ module.exports = defineConfig({
     video:false,
     retries:1,
     defaultCommandTimeout:5000,
-    viewportHeight:800,
-    viewportWidth:1000,
+    
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
