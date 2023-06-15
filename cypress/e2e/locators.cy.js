@@ -10,7 +10,7 @@ describe("Find or get Elemenets by Using different Locators", () => {
     cy.visit("/login");
   });
 
-  xit("Check different locators strategies", () => {
+  it("Check different locators strategies", () => {
     // By CSS Locator
     cy.get("input[name='username']").type("CydeoStudent"); // every statement creates an object to be interacted,
     //  and next command makes operation to the object created at previous statement
@@ -33,7 +33,7 @@ describe("Find or get Elemenets by Using different Locators", () => {
     cy.get("button").should("contain", "Login").click();
   });
 
-  xit("Check finding elements by travelling through DOM", () => {
+  it("Check finding elements by travelling through DOM", () => {
     // travel to find  login button:locate username box- go to parent form -then find button
     cy
       .get('input[name="username"]')

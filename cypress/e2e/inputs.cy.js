@@ -4,7 +4,7 @@ describe("Input Forms Tests", () => {
     cy.visit("/registration_form");
   });
 
-  it.skip("Check diferent input box field and verify", () => {
+  it("Check diferent input box field and verify", () => {
     cy.get('input[name="firstname"]').type("Mike");
     cy.get('input[name="lastname"]').type("Brown");
     cy.get('input[name="username"]').type("CrazyHeart");
@@ -30,7 +30,7 @@ describe("Input Forms Tests", () => {
 
     cy.get('input[name="birthday"]').type("01/01/1999");
   });
-  it.skip("Check different radio button", () => {
+  it("Check different radio button", () => {
     cy.get(".radio")
       .find("[type=radio]")
       .then((radio) => {
@@ -50,7 +50,7 @@ describe("Input Forms Tests", () => {
         cy.wrap(radio).eq(2).should("not.be.checked");
       });
   });
-  it.skip("Check different checkbox actions", () => {
+  it("Check different checkbox actions", () => {
     // get all chechboxes, select JAVA and verify
     cy.get('[type="checkbox"]').then((checkbox) => {
       cy.wrap(checkbox).eq(1).check().should("be.checked");
@@ -65,7 +65,7 @@ describe("Input Forms Tests", () => {
     });
   });
 
-  it.skip("Check selection of a single choice from a seleck dropdown", () => {
+  it("Check selection of a single choice from a seleck dropdown", () => {
     //select one element
     cy.get('select[name="job_title"]').select("SDET");
     //assert that dropdown has correct text after selection
