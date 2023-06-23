@@ -13,16 +13,18 @@ describe("Input Forms Tests", () => {
      * Math.floor : makes it a whole number
      *  */
 
-    let email = `formtest${Math.floor(
+    const email = `formtest${Math.floor(
       10000 + Math.random() * 90000
     )}@cydeo.com`;
     cy.get('input[name="email"]').type(email);
 
-    let password = `test${Math.floor(10000 + Math.random() * 90000)}@cydeo.com`;
+    const password = `test${Math.floor(
+      10000 + Math.random() * 90000
+    )}@cydeo.com`;
 
     cy.get('input[name="password"]').type(password);
 
-    let phonenumber = `555-000-${Math.floor(
+    const phonenumber = `555-000-${Math.floor(
       1000 + Math.random() * 8000
     )}@cydeo.com`;
 
@@ -34,7 +36,7 @@ describe("Input Forms Tests", () => {
     cy.get(".radio")
       .find("[type=radio]")
       .then((radio) => {
-        //get all radio buttons, select the first one and verify that it is check
+        // get all radio buttons, select the first one and verify that it is check
         cy.wrap(radio).first().check().should("be.checked"); // cypress works in a chainable functions structure
         /**
          * radio : is Jquery element, cy.wrap(radio) : turns it into Cypress Object so that I can use cypress functions
@@ -66,9 +68,9 @@ describe("Input Forms Tests", () => {
   });
 
   it("Check selection of a single choice from a seleck dropdown", () => {
-    //select one element
+    // select one element
     cy.get('select[name="job_title"]').select("SDET");
-    //assert that dropdown has correct text after selection
+    // assert that dropdown has correct text after selection
     cy.get('select[name="job_title"]').contains("SDET");
   });
   it("Check selection of all list options", () => {
@@ -80,12 +82,12 @@ describe("Input Forms Tests", () => {
         const optionText = option.text();
 
         // cy.log(optionText);
-        //cy.log(index);
+        // cy.log(index);
         // cy.log(departments[index]);
-      cy.get('select[name="department"]').select(optionText)
-      .should('have.value',option.val())
-      .contains(departments[index]);
-        
+        cy.get('select[name="department"]')
+          .select(optionText)
+          .should("have.value", option.val())
+          .contains(departments[index]);
       });
     });
   });
