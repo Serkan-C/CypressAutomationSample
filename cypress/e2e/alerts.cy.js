@@ -12,6 +12,7 @@ describe(
           // returning false here prevents Cypress from
           // failing the test
           false
+        
       );
       cy.clearCookies();
       cy.visit("/alerts");
